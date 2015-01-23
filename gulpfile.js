@@ -53,10 +53,10 @@ var releaseFile=[
 
 //生成release版本
 gulp.task('cleanRelease',function(){
-  //清楚release目录
+  //清理release目录
   gulp.src('release').pipe(clean());
 });
-gulp.task('buildRelease',function(){
+gulp.task('release',function(){
   //拷贝输出文件到release文件夹
   gulp.src(releaseFile).on('error',function(e){console.log(e)}).pipe(gulp.dest('release/')).on('error',function(e){console.log(e)});
 });

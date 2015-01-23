@@ -5,17 +5,20 @@
 * main: 程序入口配置在页面中
 */
 
-var bowerLibs='../../lib/',
-    customModel='../../app/model/',
-    requireConfig={
-      paths: {
-        angular: bowerLibs+'angular',
-        $: bowerLibs+'jquery',
-        map: customModel+'simpleMap'
+var staticPath={
+  'lib':'../../lib/',
+  'model': '../../app/model/'
+}
+
+var requireConfig={
+      'paths': {
+        'angular': staticPath.lib+'angular',
+        '$': staticPath.lib+'jquery',
+        'studyModel': staticPath.model+'study-model'
       },
-      shim: {
-        angular: {
-          exports: 'angular'
+      'shim': {
+        'angular': {
+          'exports': 'angular'
         }
       }
     };
