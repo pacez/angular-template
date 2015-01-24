@@ -26,19 +26,34 @@ var buildPath={
   }
 };
 
-
-//创建gulp初始化任务
-gulp.task('init',function(){
-  //清除lib目录
+//清除lib目录
+gulp.task('clean-lib',function(){
   gulp.src([buildPath.lib+'/*',buildPath.css+'/*.css']).pipe(clean());
-
-  //拷贝并压缩bower构建的基础js库到lib文件夹下
-  gulp.src(buildPath.bowerFiles()).pipe(uglify()).pipe(gulp.dest(buildPath.lib));
-
-  //编译less,除normalize以外的less都进行编译
-  gulp.src([buildPath.less+'/*.less','!'+buildPath.less+'/normalize.less']).pipe(less({compact:true})).on('error',function(e){console.log(e)}).pipe(gulp.dest(buildPath.css+"/"));
 })
 
+//拷贝并压缩bower构建的基础js库到lib文件夹下
+gulp.task('bower-to-lib',function(){
+  gulp.src(buildPath.bowerFiles()).pipe(uglify()).pipe(gulp.dest(buildPath.lib));
+});
+
+//需要编译的less文件
+var lessFiles=[
+  buildPath.less+'/*.less',
+  '!'+buildPath.less+'/normalize.less'
+]
+
+//编译less,除normalize以外的less都进行编译
+gulp.task('build-less',function(){
+  gulp.src(lessFiles).pipe(less()).on('error',function(e){console.log(e)}).pipe(gulp.dest(buildPath.css+"/"));
+});
+
+//监控文件变化
+gulp.task('watch',function(){
+  gulp.watch(lessFiles,['build-less']);
+});
+
+//构建开发任务
+gulp.task('dev',['clean-lib','bower-to-lib','watch'],function(){})
 
 
 
@@ -52,10 +67,11 @@ var releaseFile=[
 
 
 //生成release版本
-gulp.task('cleanRelease',function(){
+gulp.task('clean-release',function(){
   //清理release目录
   gulp.src('release').pipe(clean());
 });
+
 gulp.task('release',function(){
   //拷贝输出文件到release文件夹
   gulp.src(releaseFile).on('error',function(e){console.log(e)}).pipe(gulp.dest('release/')).on('error',function(e){console.log(e)});
