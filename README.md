@@ -10,7 +10,7 @@ angular-template
 通过requirejs组织模块功能。
 
 ###Build目录结构
-通过gulp init任务构建开发布版本目录
+通过gulp dev任务构建开发布版本目录
 ![Build目录结构](https://raw.githubusercontent.com/pacez/angular-template/master/doc/build.png)
 
 ###Release目录结构
