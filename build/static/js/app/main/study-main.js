@@ -2,6 +2,9 @@
 require.config(requireConfig);
 
 //定义应用，加载需要的各种依赖
-require(['studyModel'], function(app) {
-    console.log(app);
+require(['angular'], function() {
+    var app=angular.module('app', []);
+	  app.controller('app-controller',function($scope){
+	    $scope.name="test";
+	  });
 });
