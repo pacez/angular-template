@@ -16,5 +16,15 @@ var requireConfig={
         'route': staticPath.lib+'angular-route',
         '$': staticPath.lib+'jquery',
         'studyModel': staticPath.model+'study-model'
+      },
+      'shim': {
+        'angular': {
+          'export':'angular'
+        }
+      },
+      'shim': {
+        'route': {
+          'export':'route'
+        }
       }
     };
