@@ -19,7 +19,8 @@ var buildPath={
   bowerFiles: function(){
     var that=this;
     return [
-      that.bower+'/angularjs/angular.js',
+      that.bower+'/angular/angular.js',
+      that.bower+'/angular-route/angular-route.js',
       that.bower+'/jquery/dist/jquery.js',
       that.bower+'/requirejs/require.js'
     ];
@@ -27,13 +28,13 @@ var buildPath={
 };
 
 //清除lib目录
-gulp.task('clean-lib',function(){
+gulp.task('clean-build',function(){
   gulp.src([buildPath.lib+'/*',buildPath.css+'/*.css']).pipe(clean());
 })
 
 //拷贝并压缩bower构建的基础js库到lib文件夹下
 gulp.task('bower-to-lib',function(){
-  gulp.src(buildPath.bowerFiles()).pipe(uglify()).pipe(gulp.dest(buildPath.lib));
+  gulp.src(buildPath.bowerFiles()).pipe(gulp.dest(buildPath.lib));
 });
 
 //需要编译的less文件
@@ -53,10 +54,10 @@ gulp.task('watch',function(){
 });
 
 //构建开发任务
-gulp.task('dev',['clean-lib','bower-to-lib','watch'],function(){})
+gulp.task('dev',['clean-build','bower-to-lib','watch'],function(){})
 
 
-
+//需要发布的文件
 var releaseFile=[
   'build/**/*',
   '!build/bower_components',
@@ -72,7 +73,7 @@ gulp.task('clean-release',function(){
   gulp.src('release').pipe(clean());
 });
 
-gulp.task('release',function(){
+gulp.task('release',['clean-release'],function(){
   //拷贝输出文件到release文件夹
   gulp.src(releaseFile).on('error',function(e){console.log(e)}).pipe(gulp.dest('release/')).on('error',function(e){console.log(e)});
 });

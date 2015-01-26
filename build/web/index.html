@@ -4,10 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Angular Template</title>
+        <!--
         <script type="text/javascript" src="../static/js/requireConfig.js"></script>
         <script type="text/javascript" data-main="../static/js/app/main/study-main" src="../static/js/lib/require.js"></script>
+        -->
+        <script type="text/javascript"  src="../static/js/lib/angular.js"></script>
+        <script type="text/javascript"  src="../static/js/lib/angular-route.js"></script>
+        <script type="text/javascript"  src="../static/js/app/main/study-main.js"></script>
     </head>
     <body ng-app="app" ng-controller="app-controller">
-        <span ng-bind="name"></sapn>
+        <div directive></div>
+        <a href="#view">show view(Please start http server)</a>
+        <div ng-view></div>
     </body>
 </html>

@@ -13,12 +13,8 @@ var staticPath={
 var requireConfig={
       'paths': {
         'angular': staticPath.lib+'angular',
+        'route': staticPath.lib+'angular-route',
         '$': staticPath.lib+'jquery',
         'studyModel': staticPath.model+'study-model'
-      },
-      'shim': {
-        'angular': {
-          'exports': 'angular'
-        }
       }
     };
