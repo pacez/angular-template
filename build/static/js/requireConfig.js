@@ -20,9 +20,7 @@ var requireConfig={
       'shim': {
         'angular': {
           'export':'angular'
-        }
-      },
-      'shim': {
+        },
         'route': {
           'export':'route'
         }

@@ -5,7 +5,7 @@ require(['angular','route'], function() {
   app.config(['$routeProvider',function($routeProvider) {
     $routeProvider.
     when('/view', {
-      templateUrl: '/static/view/view.html',
+      templateUrl: '/build/static/view/view.html',
       controller: 'app-controller'
     })
   }]).controller('app-controller', function($scope) {
