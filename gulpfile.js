@@ -8,9 +8,7 @@ var less = require('gulp-less'),            // less
     rename = require('gulp-rename'),        // 重命名
     clean = require('gulp-clean');          //清空文件夹
 
-
 //开发阶段定义输出路径
-
 var buildPath={
   css:'build/static/css',
   less:'build/static/css/less',
@@ -56,7 +54,6 @@ gulp.task('watch',function(){
 //构建开发任务
 gulp.task('dev',['clean-build','bower-to-lib','watch'],function(){})
 
-
 //需要发布的文件
 var releaseFile=[
   'build/**/*',
@@ -65,7 +62,6 @@ var releaseFile=[
   '!build/static/css/less',
   '!build/static/css/less/**/*'
 ]
-
 
 //生成release版本
 gulp.task('clean-release',function(){

@@ -18,9 +18,6 @@ var requireConfig={
         'studyModel': staticPath.model+'study-model'
       },
       'shim': {
-        'angular': {
-          'export':'angular'
-        },
         'route': {
           'export':'route'
         }

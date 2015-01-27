@@ -1,0 +1,10 @@
+{
+  "name": "study",
+  "version": "1.0.0",
+  "devDependencies": {
+    "html5shiv": "~3.7.2",
+    "angular-route": "~1.3.11",
+    "jquery": "~2.1.3",
+    "require": "*"
+  }
+}
