@@ -12,9 +12,9 @@ var staticPath={
 
 var requireConfig={
       'paths': {
-        'angular': staticPath.lib+'angular',
-        'route': staticPath.lib+'angular-route',
-        '$': staticPath.lib+'jquery',
+        'angular': staticPath.lib+'angular.min',
+        'route': staticPath.lib+'angular-route.min',
+        '$': staticPath.lib+'jquery.min',
         'studyModel': staticPath.model+'study-model'
       },
       'shim': {
