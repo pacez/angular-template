@@ -1,7 +1,7 @@
 # angular-template
 angular-template
 
-构建基于【gulp+bower+require+angular】 的项目模板，用于快速构建/发布前端项目。
+构建基于【gulp+bower+angular】 的项目模板，用于快速构建/发布前端项目。
 
 ###bower
 通过bower获取基础库目录。
