@@ -4,8 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Angular Template</title>
-        <script type="text/javascript" src="../static/js/requireConfig.js"></script>
-        <script type="text/javascript" data-main="../static/js/app/main/study-main" src="../static/js/lib/require.js"></script>
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="../static/js/lib//html5shiv.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="../static/js/lib/angular.min.js"></script>
+        <script type="text/javascript" src="../static/js/lib/angular-route.min.js"></script>
+        <script type="text/javascript" src="../static/js/app/study-main.js"></script>
     </head>
     <body ng-app="app" ng-controller="app-controller">
         <div directive></div>
