@@ -20,8 +20,7 @@ var buildPath={
       that.bower+'/html5shiv/dist/html5shiv.min.js',
       that.bower+'/angular/angular.min.js',
       that.bower+'/angular-route/angular-route.min.js',
-      that.bower+'/jquery/dist/jquery.min.js',
-      that.bower+'/requirejs/require.js'
+      that.bower+'/jquery/dist/jquery.min.js'
     ];
   }
 };
